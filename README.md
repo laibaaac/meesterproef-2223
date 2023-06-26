@@ -151,6 +151,7 @@ Verder hebben wij constant de feedback van onze docenten ook erin verwerkt, wij 
 # Week 3
 ## Wat heb ik deze week gedaan
 
+Ik heb de volgende taken deze week gedaan
 ## Img preview 
 ## Img link parsen 
 ## Toggle toepassen 
@@ -177,7 +178,8 @@ Verder is dit ook de laatste week waar we feedback kunnen krijgen van de project
 Ik heb deze week de volgende taken afgerond. 
 
 ## Pop up
-Ik was al bezig met het maken van de pop up vorig week, alleen ging het niet zo makkelijk
+Ik was al bezig met het maken van de pop up vorig week, alleen ging het niet zo makkelijk. Ik gebruikte een div als een pop up, die zou ik stylen via css en togglen via javascript. Alleen via javascript ging het met togglen niet goed. 
+Zie hieronder de code. 
 
 ```html
                 <div id="popup" class="hidden">
@@ -227,12 +229,149 @@ Ik was al bezig met het maken van de pop up vorig week, alleen ging het niet zo 
 ```
 
 
+
+Tijdens de design review kreeg ik de feedback van Vasilis dat ik ipv een div, beter dialog kan gebruiken. 
+Een HTML-dialog is een ingebouwd element in HTML5 waarmee je modale dialoogvensters kunt maken, zoals bevestigingsvensters of formulieren, zonder extra JavaScript-code te schrijven.
+
+Ik vond de dialog tag makkelijker toe te passen en ben er meteen aan de slag gegaan. 
+
+Zie hier de code. 
+
+```html
+                <dialog class="no-js">   
+                <div id="links">
+                    <label for="links">Websites waar je rechtvrije afbeelding kan vinden</label>
+                    <div class='linkjes'>
+                        <a href="https://unsplash.com/">Unsplash</a>
+                        <a href="https://www.pexels.com/nl-nl/">Pexels</a>
+                        <a href="https://pixabay.com/nl/">Pixabay</a>
+                    </div>
+                    <p class="hierarchy">Link</p>
+                    <input type="text" name="imageLink" id="imageLink" placeholder="Plaats hier uw link">
+                    <div id="imagePreview"></div>
+                    <label for="or">Of</label>
+                    <p class="hierarchy">Bestand</p>
+                    <div class="file-input-container">
+                        <img src="/images/wolkje.png" alt="een wolkje dat staat voor uploaden van een afbeelding">
+                        <p>Selecteer een bestand</p>
+                        <input type="file" id="file" name="file" accept="image/jpeg, image/png, image/jpg">
+                    </div>
+                    <div id="customImagePreview"></div>
+                    <p id="selectedFileName">Geen bestand geselecteerd</p>
+                    <div id="closeButton" class="hidden">&#10006;</div>
+
+                    <button id="closeDialog">sluiten</button>
+                </div>
+
+```
+
+
 ## Form validatie 
+Het valideren van een formulier hebben wij tijdens het vak browser technologies geleerd. 
+Je hebt dan 3 lagen van validation, html, css en javascript. 
+
+Bij html ziet de validation zo er uit
+
+```html 
+<input type="text" id="title" name="title" placeholder="Geef je wens een titel" minlength="2" maxlength="40" required>
+```
+
+
+Bij css ziet de validation er zo uit
+
+```css
+textarea:required:invalid {
+  border: 2px solid red;
+}
+
+textarea:required:valid {
+  border: 2px solid green;
+}
+```
+
+Bij javascript ziet de validation er zo uit
+
+```javascript
+if (titleInput) {
+  titleInput.addEventListener('input', function() {
+    if (titleInput.value.trim() === '') {
+      titleInput.setCustomValidity('Please enter a title');
+    } else {
+      titleInput.setCustomValidity('');
+    }
+  });
+}
+```
 
 
 ## Javascript errors 
 
+
+
+
 ## Form data versturen naar database
+
+
+```javascript
+
+router.post("/form", async (req, res) => {
+  try {
+    const { data, error } = await supabase
+      .from("suggestion")
+      .insert([
+        {
+          title: req.body.title,
+          description: req.body.description,
+          image: req.body.imageLink,
+        },
+      ])
+      .select();
+
+    const insertId = data.length > 0 ? data[0].id : null;
+    if (error || !insertId) {
+      throw error;
+    }
+
+    console.log([parseInt(req.body.theme)])
+    const themes = req.body.theme;
+
+    const themeInsertPromises = themes.map(async (theme) => {
+      const { data: themeData, error: themeError } = await supabase
+        .from("theme")
+        .select("id")
+        .eq("id", theme)
+        .single();
+      if (themeError) {
+        throw themeError;
+      }
+
+      const { error: suggestionThemeError } = await supabase
+        .from("suggestion_theme")
+        .insert([
+          {
+            suggestionId: insertId,
+            themaId: themeData.id,
+          },
+        ]);
+      if (suggestionThemeError) {
+        throw suggestionThemeError;
+      }
+    });
+
+    await Promise.all(themeInsertPromises);
+    res.render("sent", {
+      title: "sent",
+    });
+  } catch (error) {
+    res
+      .status(500)
+      .json({ error: "Het toevoegen van de wens ging fout, probeer opnieuw" });
+    console.log(error);
+    return;
+  }
+});
+```
+
 
 
 ## Design afronden
@@ -267,7 +406,7 @@ Wij hebben alleen voor de zekerheid de mogelijkheid om een bestand toe te voegen
 
 
 
-
+## Reflectie
 
 
 
@@ -295,6 +434,7 @@ Wij hebben alleen voor de zekerheid de mogelijkheid om een bestand toe te voegen
 
 # Bronnen
 - https://www.npmjs.com/package/multer 
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog?retiredLocale=nl 
 
 
 
