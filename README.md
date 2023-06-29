@@ -433,8 +433,57 @@ Wij hebben alleen voor de zekerheid de mogelijkheid om een bestand toe te voegen
 
 
 # Bronnen
-- https://www.npmjs.com/package/multer 
-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog?retiredLocale=nl 
+- NPM: multer 
+https://www.npmjs.com/package/multer
+
+
+
+- Developer.mozilla: <dialog>: The Dialog element
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog?retiredLocale=nl
+
+
+
+- Developer.mozilla: Local storage
+https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage 
+
+
+
+- Supabase Javascript Client - Insert data.
+https://supabase.com/docs/reference/javascript/insert
+
+
+- GeeksforGeeks. (2023). How to add an object to an array in JavaScript. GeeksforGeeks.
+https://www.geeksforgeeks.org/how-to-add-an-object-to-an-array-in-javascript/ 
+
+
+- (2023, 2 februari). Building a CRUD App with Supabase and Express: A Step-by-Step Guide for Junior Developers. Medium.
+https://medium.com/@heshramsis/building-a-crud-app-with-supabase-and-express-a-step-by-step-guide-for-junior-developers-81456b850910 
+
+
+- How make to make dropdown without html select.  Stack Overflow. 
+https://stackoverflow.com/questions/43362588/how-make-to-make-dropdown-without-html-select
+
+
+- How to use Checkbox inside Select Option. Stack Overflow. 
+https://stackoverflow.com/questions/17714705/how-to-use-checkbox-inside-select-option 
+
+- Babich, N. (2022, 11 oktober). Radio buttons, checkboxes, toggle switches, and dropdown lists: design tips for using selection controls.
+https://uxplanet.org/radio-buttons-checkboxes-toggle-switches-and-dropdown-lists-design-tips-for-using-selection-d120a1e323c5
+
+
+- Pure CSS Custom Checkbox Style | Modern CSS Solutions.
+https://moderncss.dev/pure-css-custom-checkbox-style/ 
+
+
+- Client-side form validation - Learn web development | MDN. (2023, 2 juni)
+https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation
+
+- Coyier, C. (2021, 16 september). Form Validation UX in HTML and CSS | CSS-Tricks.
+https://css-tricks.com/form-validation-ux-html-css/ 
+
+- Alligator.Io. (2020). Styling Form Inputs in CSS With :required, :optional, :valid and :invalid. DigitalOcean.
+https://www.digitalocean.com/community/tutorials/css-styling-form-input-validity 
+
 
 
 
