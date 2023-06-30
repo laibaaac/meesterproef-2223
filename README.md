@@ -1,7 +1,7 @@
 # Meesterproef Strandeiland
 [Team repo](https://github.com/RainbowJM/strandeiland) 
 
-<img width="200" alt="" src="https://github.com/laibaaac/meesterproef-2223/assets/94360732/04c50d13-61b1-44f9-a76b-9f3d1d3cef71">
+<img width=200 alt= src=https://github.com/laibaaac/meesterproef-2223/assets/94360732/04c50d13-61b1-44f9-a76b-9f3d1d3cef71>
 
 Voor het eindproject voor het minor web (MEESTERPROEF), gaan wij in groepjes aan de slag met een opdracht. 
 We mochten zelf een opdracht uitkiezen en ons voorkeuren van groepjes. 
@@ -33,57 +33,64 @@ Dus aan ons de opdracht om de volgende functionaliteiten toe te voegen:
 
 # Inhoudsopgave
 - [Week 1](#week-1)
-  * [Wat heb ik deze week gedaan](#wat-heb-ik-deze-week-gedaan)
   * [Scrum opzet](#scrum-opzet)
+  * [Vragen aan de opdrachtgever](#vragen-aan-de-opdrachtgever)
+  * [Mindmap](#mindmap)
   * [Debriefing](#debriefing)
-  * [Schetsen (formulier)](#schetsen--formulier-)
-  * [Feedback Debriefing](#feedback-debriefing)
-  * [Test met opdrachtgever](#test-met-opdrachtgever)
-  * [Feedback van opdrachtgever / docent (code en design review) verwerken](#feedback-van-opdrachtgever---docent--code-en-design-review--verwerken)
+  * [Ideegeneratie](#ideegeneratie)
+  * [Moscow Methode](#moscow-methode)
+  * [Requirement list](#requirement-list)
+  * [Visuele analyse](#visuele-analyse)
+  * [Schetsen formulier pagina](#schetsen-formulier-pagina)
+  * [Feedback Michel](#feedback-michel)
+  * [Design iteratie](#design-iteratie)
+  * [Code](#code)
   * [Reflectie](#reflectie)
 - [Week 2](#week-2)
-  * [Wat heb ik deze week gedaan](#wat-heb-ik-deze-week-gedaan-1)
   * [Thema’s opstellen](#thema-s-opstellen)
-  * [Formulier afmaken](#formulier-afmaken)
   * [De bevestiging pagina](#de-bevestiging-pagina)
   * [Localstorage](#localstorage)
   * [Dropdown menu en afbeelding onderzoek](#dropdown-menu-en-afbeelding-onderzoek)
   * [Schetsen formulier](#schetsen-formulier)
   * [Bevestiging pagina maken](#bevestiging-pagina-maken)
   * [Img preview](#img-preview)
-  * [Feedback van opdrachtgever / docent (code en design review) verwerken](#feedback-van-opdrachtgever---docent--code-en-design-review--verwerken-1)
+  * [Feedback van opdrachtgever / docent (code en design review) verwerken](#feedback-van-opdrachtgever---docent--code-en-design-review--verwerken)
   * [Reflectie](#reflectie-1)
 - [Week 3](#week-3)
-  * [Wat heb ik deze week gedaan](#wat-heb-ik-deze-week-gedaan-2)
   * [Img preview](#img-preview-1)
   * [Img link parsen](#img-link-parsen)
   * [Toggle toepassen](#toggle-toepassen)
   * [De design aanpassen](#de-design-aanpassen)
   * [Formulier post](#formulier-post)
   * [Afbeelding pop up](#afbeelding-pop-up)
-  * [Micro interactie](#micro-interactie)
-  * [Feedback van opdrachtgever / docent (code en design review) verwerken](#feedback-van-opdrachtgever---docent--code-en-design-review--verwerken-2)
+  * [Feedback van opdrachtgever / docent (code en design review) verwerken](#feedback-van-opdrachtgever---docent--code-en-design-review--verwerken-1)
   * [Reflectie](#reflectie-2)
 - [Week 4](#week-4)
-  * [Wat heb ik deze week gedaan](#wat-heb-ik-deze-week-gedaan-3)
+  * [Wat heb ik deze week gedaan](#wat-heb-ik-deze-week-gedaan)
   * [Pop up](#pop-up)
   * [Form validatie](#form-validatie)
   * [Javascript errors](#javascript-errors)
   * [Form data versturen naar database](#form-data-versturen-naar-database)
   * [Design afronden](#design-afronden)
   * [Multer](#multer)
+  * [Reflectie](#reflectie-3)
 - [Week 5](#week-5)
-  * [Wat heb ik deze week gedaan](#wat-heb-ik-deze-week-gedaan-4)
-- [Reflectie](#reflectie-3)
+  * [Documentatie](#documentatie)
+  * [Testen  (lighthouse)](#testen---lighthouse-)
+  * [Code refactor](#code-refactor)
+  * [Localstorage](#localstorage-1)
+  * [Reflectie](#reflectie-4)
+- [Reflectie](#reflectie-5)
   * [Wat heb ik geleerd?](#wat-heb-ik-geleerd-)
   * [Wat ging er goed?](#wat-ging-er-goed-)
   * [Wat ging er minder goed?](#wat-ging-er-minder-goed-)
   * [Waar ben ik trots op](#waar-ben-ik-trots-op)
 - [Toepassing meesterproef Vakken](#toepassing-meesterproef-vakken)
-  * [Browser Tech](#browser-tech)
+  * [Browser Technologies](#browser-technologies)
   * [CSS to the rescue](#css-to-the-rescue)
   * [Web app from scratch](#web-app-from-scratch)
   * [Progressive web app](#progressive-web-app)
+  * [Human Centered Design](#human-centered-design)
 - [Bronnen](#bronnen)
 
 
@@ -170,12 +177,12 @@ Hier kan je een lege opzet van css zien
 ```css
 *,
 *::before,
-*::after {
+*::after
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-:root {
+:root
 }
 
 body{
@@ -203,20 +210,85 @@ Door strak te plannen hebben wij best veel kunnen doen. Wat ik anders misschien 
 
 
 # Week 2
-W hebben een aantal taken vorige week af kunnen maken, maar deze week moeten wij weer aan de bak. W
-e zijn de dag begonnen om alvast te kijken naar de verschillende thema’s die wij bij de wensen pagina kunnen hebben. 
-Na het samen bepalen van de thema’s, hebben wij gekeken naar de feedback van de opdrachtgever en wat we verder nog moeten uitwerken. Dit hebben wij verdeeld onder de taken. 
+We hebben een aantal taken vorige week af kunnen maken, maar deze week moesten wij weer aan de bak. 
+We waren begonnen om alvast te kijken naar de verschillende thema’s die wij bij de wensen pagina kunnen hebben. 
+Na het samen bepalen van de thema’s, hebben wij gekeken naar de feedback van de opdrachtgever en wat we verder nog moeten uitwerken. 
+De volgende taken had ik deze week afgerond. 
 
 ## Thema’s opstellen
-opgestelde thema's 
+Vooraf had ik al naar de website van hallo ijburg gekeken en een paar thema's opgesteld. Ik zag dat er veel voorkomende thema's waren, maar anders verwoord. Hierdoor heb ik een lijst opgesteld. Daarna hebben we even besproken welke thema's wel en niet relevant waren. 
+De opgestelde thema's die wij samen hebben besloten zijn: 
+
+1 = Recreatie
+2 = Infrastructuur
+3 = Sport
+4 = Natuur
+5 = Winkel
+6 = Milieu
+7 = Jeugd
+8 = Cultuur
+9 = Huisvesting
+10 = Veiligheid
+11 = Verkeer
+12 = Strand
+13 = Onderwijs
+14 = Overig
 
 ## De bevestiging pagina
+De sent.ejs pagina, is bedoeld wanneer de data wordt verzonden vanuit het formulier naar de database, dan zie je dit pagina. 
+
+Ik render de pagina al in routing, wanneer alles goed gaat, dan zie je deze pagina. zo niet krijg je een error te zien. 
+
+```javascript
+  res.render("sent", { title: "sent" });
+ 
+```
+
+**Design**
+De styling zelf lijkt op de banner op de index pagina. Alleen qua grootte is het anders en ook de tekst. We wouden dit weer teurg laten komen en het zag er ook leuk uit om het als een bevestigingspagina te krijgen  
+
+foto hiero 
+
+
+**Animatie**
+Ik heb zelf ook animatie op de 1e vakje en 3e vakje gezet. 
+De opdrachtgever geloofde niet dat het een css animatie is, hij dacht dat het een javascript code was.  
+
+```css
+@keyframes slogan-1{
+  0% {transform: translateY(0);}
+  100% {transform: translateY(-1rem);}
+}
+
+@keyframes slogan-2 {
+  0% {transform: rotate(0);}100% {transform: rotate(-8deg);}
+}
+
+```
+
 
 ## Localstorage 
+Wat als de gebruiker aan het typen was en 
+
+```javascript
+// Function to update form data
+function updateFormData() {
+  // ...
+
+  const formData = {
+    title: document.getElementById("title").value,
+    description: document.getElementById("description").value,
+    themas: selectedThemes
+  };
+
+  // Save form data to localStorage
+  localStorage.setItem(localStorageKey, JSON.stringify(formData));
+}
+
+
+```
 
 ## Dropdown menu en afbeelding onderzoek
-
-## Schetsen formulier
 
 
 ## Bevestiging pagina maken
@@ -226,6 +298,9 @@ opgestelde thema's
 
 
 ## Feedback van opdrachtgever / docent (code en design review) verwerken
+Code review
+7 juni (week 2) Robert code review (data sanitization)
+
 
 ## Reflectie 
 Deze week zijn we bezig geweest met de design verder uit te werken en de functionaliteiten uit te werken. Voor mijn gevoel ging het best goed, maar ik kreeg een aantal errors net als de thema’s kon ik niet goed stylen, hier aan had ik te veel tijd aan besteed. Uiteindelijk heeft Keisha mij enorm geholpen met de thema, verder heb ik ook de localstorage erin verwerkt.
@@ -234,18 +309,27 @@ Verder hebben wij constant de feedback van onze docenten ook erin verwerkt, wij 
 
 
 # Week 3
+Begin van een nieuwe sprint!! We hebben nog 2 weken te gaan!
+Maar dit betekent dat we echt aan de bak moesten gaan!
+Ik heb deze week ontzettend veel gedaan, ik probeerde verschillende elementen echt te laten werken. 
+Ik heb de volgende taken deze week gedaan. 
 
-
-Ik heb de volgende taken deze week gedaan
 ## Img preview 
+
 ## Img link parsen 
+
 ## Toggle toepassen 
-## De design aanpassen 
-## Formulier post 
+
+## De design aanpassen
+
+## Formulier post
+
 ## Afbeelding pop up
-## Micro interactie 
+
 
 ## Feedback van opdrachtgever / docent (code en design review) verwerken
+14 juni (week 3) Justus: hierarchy van code, kijken waar precies waar hoort
+15 juni (week 3) Vasilis: form feedback, pop up button
 
 ## Reflectie 
 Deze week was onze 3e week, we zijn langzamerhand aan het voorbereiden voor het leveren van het product, deze week wouden wij de designimplementatie afronden en hierna focussen op het fine tunen van het eind product, maar na de feedback van de opdrachtgever en de docenten hebben wij besloten om wat nog meer tijd aan design te besteden. We hebben wel de database geïmplementeerd en proberen ons voor te bereiden voor het eind sprint. 
@@ -267,46 +351,46 @@ Ik was al bezig met het maken van de pop up vorig week, alleen ging het niet zo 
 Zie hieronder de code. 
 
 ```html
-                <div id="popup" class="hidden">
+                <div id=popup class=hidden>
     
                 
         
-                    <div id="links">
-                        <label for="links">Websites waar je rechtvrije afbeelding kan vinden</label>
+                    <div id=links>
+                        <label for=links>Websites waar je rechtvrije afbeelding kan vinden</label>
        
                         <div class='linkjes'>
-                            <a href="https://unsplash.com/">Unsplash</a>
-                            <a href="https://www.pexels.com/nl-nl/">Pexels</a>
-                            <a href="https://pixabay.com/nl/">Pixabay</a>
+                            <a href=https://unsplash.com/>Unsplash</a>
+                            <a href=https://www.pexels.com/nl-nl/>Pexels</a>
+                            <a href=https://pixabay.com/nl/>Pixabay</a>
                         </div>
                       
         
-                        <p class="hierarchy">Link</p>
+                        <p class=hierarchy>Link</p>
                     
            
-                        <input type="text" name="imageLink" id="imageLink" placeholder="Plaats hier uw link">
+                        <input type=text name=imageLink id=imageLink placeholder=Plaats hier uw link>
                         
-                        <div id="imagePreview"></div>
+                        <div id=imagePreview></div>
                     
         
-                        <label for="or">Of</label>
+                        <label for=or>Of</label>
                  
         
-                        <p class="hierarchy">Bestand</p>
+                        <p class=hierarchy>Bestand</p>
                    
         
 
-                        <div class="file-input-container">
-                            <img src="/images/wolkje.png" alt="een wolkje dat staat voor uploaden van een afbeelding">
+                        <div class=file-input-container>
+                            <img src=/images/wolkje.png alt=een wolkje dat staat voor uploaden van een afbeelding>
                             <p>Selecteer een bestand</p>
-                            <input type="file" id="file" name="file" accept="image/jpeg, image/png, image/jpg">
+                            <input type=file id=file name=file accept=image/jpeg, image/png, image/jpg>
                      
                         </div>
-                        <div id="customImagePreview"></div>
+                        <div id=customImagePreview></div>
                     
-                        <p id="selectedFileName">Geen bestand geselecteerd</p>
+                        <p id=selectedFileName>Geen bestand geselecteerd</p>
             
-                        <div id="closeButton" class="hidden">&#10006;</div>
+                        <div id=closeButton class=hidden>&#10006;</div>
                      
                     </div>
                 </div>
@@ -323,29 +407,29 @@ Ik vond de dialog tag makkelijker toe te passen en ben er meteen aan de slag geg
 Zie hier de code. 
 
 ```html
-                <dialog class="no-js">   
-                <div id="links">
-                    <label for="links">Websites waar je rechtvrije afbeelding kan vinden</label>
+                <dialog class=no-js>   
+                <div id=links>
+                    <label for=links>Websites waar je rechtvrije afbeelding kan vinden</label>
                     <div class='linkjes'>
-                        <a href="https://unsplash.com/">Unsplash</a>
-                        <a href="https://www.pexels.com/nl-nl/">Pexels</a>
-                        <a href="https://pixabay.com/nl/">Pixabay</a>
+                        <a href=https://unsplash.com/>Unsplash</a>
+                        <a href=https://www.pexels.com/nl-nl/>Pexels</a>
+                        <a href=https://pixabay.com/nl/>Pixabay</a>
                     </div>
-                    <p class="hierarchy">Link</p>
-                    <input type="text" name="imageLink" id="imageLink" placeholder="Plaats hier uw link">
-                    <div id="imagePreview"></div>
-                    <label for="or">Of</label>
-                    <p class="hierarchy">Bestand</p>
-                    <div class="file-input-container">
-                        <img src="/images/wolkje.png" alt="een wolkje dat staat voor uploaden van een afbeelding">
+                    <p class=hierarchy>Link</p>
+                    <input type=text name=imageLink id=imageLink placeholder=Plaats hier uw link>
+                    <div id=imagePreview></div>
+                    <label for=or>Of</label>
+                    <p class=hierarchy>Bestand</p>
+                    <div class=file-input-container>
+                        <img src=/images/wolkje.png alt=een wolkje dat staat voor uploaden van een afbeelding>
                         <p>Selecteer een bestand</p>
-                        <input type="file" id="file" name="file" accept="image/jpeg, image/png, image/jpg">
+                        <input type=file id=file name=file accept=image/jpeg, image/png, image/jpg>
                     </div>
-                    <div id="customImagePreview"></div>
-                    <p id="selectedFileName">Geen bestand geselecteerd</p>
-                    <div id="closeButton" class="hidden">&#10006;</div>
+                    <div id=customImagePreview></div>
+                    <p id=selectedFileName>Geen bestand geselecteerd</p>
+                    <div id=closeButton class=hidden>&#10006;</div>
 
-                    <button id="closeDialog">sluiten</button>
+                    <button id=closeDialog>sluiten</button>
                 </div>
 
 ```
@@ -358,18 +442,18 @@ Je hebt dan 3 lagen van validation, html, css en javascript.
 Bij html ziet de validation zo er uit
 
 ```html 
-<input type="text" id="title" name="title" placeholder="Geef je wens een titel" minlength="2" maxlength="40" required>
+<input type=text id=title name=title placeholder=Geef je wens een titel minlength=2 maxlength=40 required>
 ```
 
 
 Bij css ziet de validation er zo uit, wanneer er text in de input field zit, wordt het groen, zo niet dan is het rood. 
 
 ```css
-textarea:required:invalid {
+textarea:required:invalid
   border: 2px solid red;
 }
 
-textarea:required:valid {
+textarea:required:valid
   border: 2px solid green;
 }
 ```
@@ -383,12 +467,12 @@ const maxThemes = 4;
 
 let selectedThemes = [];
 
-function updateSelectedOptionText() {
+function updateSelectedOptionText()
   selectedThemes = Array.from(themeCheckboxes)
     .filter((checkbox) => checkbox.checked)
     .map((checkbox) => checkbox.value);
 
-  themeCheckboxes.forEach((checkbox) => {
+  themeCheckboxes.forEach((checkbox) =>
     checkbox.disabled = selectedThemes.length >= maxThemes && !checkbox.checked;
   });
 }
@@ -410,12 +494,12 @@ Hier laat ik even mijn code van versturen van de data (van het formulier) naar d
 
 ```javascript
 
-router.post("/form", async (req, res) => {
-  try {
-    const { data, error } = await supabase
-      .from("suggestion")
+router.post(/form, async (req, res) =>
+  try
+    const data, error } = await supabase
+      .from(suggestion)
       .insert([
-        {
+       
           title: req.body.title,
           description: req.body.description,
           image: req.body.imageLink,
@@ -424,44 +508,44 @@ router.post("/form", async (req, res) => {
       .select();
 
     const insertId = data.length > 0 ? data[0].id : null;
-    if (error || !insertId) {
+    if (error || !insertId)
       throw error;
     }
 
     console.log([parseInt(req.body.theme)])
     const themes = req.body.theme;
 
-    const themeInsertPromises = themes.map(async (theme) => {
-      const { data: themeData, error: themeError } = await supabase
-        .from("theme")
-        .select("id")
-        .eq("id", theme)
+    const themeInsertPromises = themes.map(async (theme) =>
+      const data: themeData, error: themeError } = await supabase
+        .from(theme)
+        .select(id)
+        .eq(id, theme)
         .single();
-      if (themeError) {
+      if (themeError)
         throw themeError;
       }
 
-      const { error: suggestionThemeError } = await supabase
-        .from("suggestion_theme")
+      const error: suggestionThemeError } = await supabase
+        .from(suggestion_theme)
         .insert([
-          {
-            suggestionId: insertId,
-            themaId: themeData.id,
+         
+            suggestioninsertId,
+            themathemeData.id,
           },
         ]);
-      if (suggestionThemeError) {
+      if (suggestionThemeError)
         throw suggestionThemeError;
       }
     });
 
     await Promise.all(themeInsertPromises);
-    res.render("sent", {
-      title: "sent",
+    res.render(sent,
+      title: sent,
     });
-  } catch (error) {
+  } catch (error)
     res
       .status(500)
-      .json({ error: "Het toevoegen van de wens ging fout, probeer opnieuw" });
+      .json({ error: Het toevoegen van de wens ging fout, probeer opnieuw });
     console.log(error);
     return;
   }
@@ -478,7 +562,7 @@ Tijdens het heen en weer testen, kwam ik een paar punten tegen die ik wou toepas
 Zie hier de verbeterde versie 
 ![5dc2a675-4415-4bd9-adf5-a41567a9fdae](https://github.com/RainbowJM/strandeiland/assets/94360732/314a65f4-4f1f-42b3-a61d-482d599753d3)
 
-<img width="1300" alt="Schermafbeelding 2023-06-28 om 15 17 47" src="https://github.com/RainbowJM/strandeiland/assets/94360732/a1b6dfe5-5358-482c-a2a6-27a6270c1096">
+<img width=1300 alt=Schermafbeelding 2023-06-28 om 15 17 47 src=https://github.com/RainbowJM/strandeiland/assets/94360732/a1b6dfe5-5358-482c-a2a6-27a6270c1096>
 
 
 
@@ -486,7 +570,7 @@ Zie hier de verbeterde versie
 **Wat is multer?**
 Multer is een middleware voor het verwerken van multipart/form-data in Node.js en Express.js. Het wordt vaak gebruikt in combinatie met webapplicaties die bestandsuploads ondersteunen. Multer maakt het gemakkelijk om bestanden te ontvangen via HTTP-verzoeken en ze op te slaan op de server.
 
-Multer biedt functionaliteit voor het verwerken van meerdere bestanden, het beperken van bestandstypen en het instellen van maximale bestandsgroottes. Het is ook mogelijk om aangepaste bestandsopslaglocaties en bestandsnamen te definiëren. Multer maakt gebruik van het concept van "middleware" in Express.js, waardoor het eenvoudig kan worden geïntegreerd in bestaande Express.js-applicaties.
+Multer biedt functionaliteit voor het verwerken van meerdere bestanden, het beperken van bestandstypen en het instellen van maximale bestandsgroottes. Het is ook mogelijk om aangepaste bestandsopslaglocaties en bestandsnamen te definiëren. Multer maakt gebruik van het concept van middleware in Express.js, waardoor het eenvoudig kan worden geïntegreerd in bestaande Express.js-applicaties.
 
 **Waarom multer eigenlijk?**
 Deze week was ik bezig met het versturen van de data vanuit het formulier. Wij hebben een aantal informatie die wij uit het formulier willen uit halen, dat zijn titel, beschrijving, thema's, afbeelding link of afbeelding bestand. Het versturen van bijna alles ging goed behalve afbeelding bestand, wij kwamen er achter, dat het versturen van het bestand naar supabase (database), niet zo makkelijk is. 
@@ -530,20 +614,20 @@ Ik bleef maar dingen aanpasen en door testen, uiteindelijk had ik alles boven de
 De volgende dingen moest ik aanpassen:
 - Meta name
 ```html
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#fffff"/>
-<meta name="Strandeiland" content="Welkom op Strandeiland.">
-<meta name="description" content="Hallostrandeiland.nl is een website dat gaat over het versturen van wensen voor het nietu.">
-<meta name="Author: Hilal Keisha Jevona Laiba">
-<link rel="stylesheet" href="/css/global.min.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet" media="all">
-<script src="https://kit.fontawesome.com/87a1015511.js" crossorigin="anonymous" defer></script>
-<link rel="manifest" href="/manifest.json">
-<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+<meta charset=UTF-8>
+<meta http-equiv=X-UA-Compatible content=IE=edge>
+<meta name=viewport content=width=device-width, initial-scale=1.0>
+<meta name=theme-color content=#fffff/>
+<meta name=Strandeiland content=Welkom op Strandeiland.>
+<meta name=description content=Hallostrandeiland.nl is een website dat gaat over het versturen van wensen voor het nietu.>
+<meta name=Author: Hilal Keisha Jevona Laiba>
+<link rel=stylesheet href=/css/global.min.css>
+<link rel=preconnect href=https://fonts.googleapis.com>
+<link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+<link href=https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap rel=stylesheet media=all>
+<script src=https://kit.fontawesome.com/87a1015511.js crossorigin=anonymous defer></script>
+<link rel=manifest href=/manifest.json>
+<link rel=shortcut icon href=/images/favicon.ico type=image/x-icon>
 <title> <%= title %></title>
 ```
 - Reduce css 
@@ -560,39 +644,39 @@ Ik heb heel veel javascript code voor mijn formulier en die is allemaal erin ges
 Om de script.js wat overzichtelijk te houden, moet is mijn javascript code naar de form.js verhuizen en die dan later op te roepen in mijn script.js.
 
 ```javascript 
-import { selectedOption, dropdownMenu, localStorageKey, themeCheckboxes, fileInput, customImagePreview, selectedFileName,
-  savedFormData, imageLinkInput, imagePreview, titleInput, descriptionTextarea, uploadDialog, closeDialogButton, imgCloseDialogButton, themes } from "./modules/variables.js";
+import selectedOption, dropdownMenu, localStorageKey, themeCheckboxes, fileInput, customImagePreview, selectedFileName,
+  savedFormData, imageLinkInput, imagePreview, titleInput, descriptionTextarea, uploadDialog, closeDialogButton, imgCloseDialogButton, themes } from ./modules/variables.js;
 
-function loadFormData() {
-  if (savedFormData) {
-    if (titleInput) {
+function loadFormData()
+  if (savedFormData)
+    if (titleInput)
       titleInput.value = savedFormData.title;
     }
 
-    if (descriptionTextarea) {
+    if (descriptionTextarea)
       descriptionTextarea.value = savedFormData.description;
     }
 
-    if (themeCheckboxes) {
-      themeCheckboxes.forEach((checkbox) => {
+    if (themeCheckboxes)
+      themeCheckboxes.forEach((checkbox) =>
         checkbox.checked = savedFormData.themes.includes(checkbox.value);
       });
     }
 
-    if (imageLinkInput) {
+    if (imageLinkInput)
       imageLinkInput.value = savedFormData.imageLink;
-      imagePreview.innerHTML = `<img src="${savedFormData.imageLink}" alt="">`;
+      imagePreview.innerHTML = `<img src=${savedFormData.imageLink} alt=>`;
     }
 
-    if (fileInput) {
-      selectedFileName.textContent = savedFormData.file ? savedFormData.file.name : "Geen bestand geselecteerd";
-      customImagePreview.innerHTML = savedFormData.file ? `<img src="${URL.createObjectURL(savedFormData.file)}" alt="Selected Image">` : "";
+    if (fileInput)
+      selectedFileName.textContent = savedFormData.file ? savedFormData.file.name : Geen bestand geselecteerd;
+      customImagePreview.innerHTML = savedFormData.file ? `<img src=${URL.createObjectURL(savedFormData.file)} alt=Selected Image>` : ;
     }
   }
 }
 
-function saveFormData() {
-  const formData = {
+function saveFormData()
+  const formData =
     title: titleInput.value,
     description: descriptionTextarea.value,
     themes: [],
@@ -600,9 +684,9 @@ function saveFormData() {
     file: fileInput.files[0]
   };
 
-  if (themeCheckboxes) {
-    themeCheckboxes.forEach((checkbox) => {
-      if (checkbox.checked) {
+  if (themeCheckboxes)
+    themeCheckboxes.forEach((checkbox) =>
+      if (checkbox.checked)
         formData.themes.push(checkbox.value);
       }
     });
@@ -610,17 +694,17 @@ function saveFormData() {
   localStorage.setItem(localStorageKey, JSON.stringify(formData));
 }
 
-function updateSelectedOptionText() {
+function updateSelectedOptionText()
   const selectedThemes = Array.from(themeCheckboxes)
     .filter((checkbox) => checkbox.checked)
     .map((checkbox) => checkbox.value);
 
-  themeCheckboxes.forEach((checkbox) => {
+  themeCheckboxes.forEach((checkbox) =>
     checkbox.disabled = selectedThemes.length >= maxThemes && !checkbox.checked;
   });
 }
 
-function updateFormData() {
+function updateFormData()
   const selectedCheckboxes = Array.from(themeCheckboxes)
     .filter((checkbox) => checkbox.checked)
     .map((checkbox) => checkbox.value);
@@ -629,35 +713,35 @@ function updateFormData() {
     .filter((theme) => selectedCheckboxes.includes(theme.id))
     .map((theme) => theme.label);
 
-  selectedOption.textContent = selectedThemes.length > 0 ? selectedThemes.join(", ") : "Selecteer de passende thema's";
+  selectedOption.textContent = selectedThemes.length > 0 ? selectedThemes.join(, ) : Selecteer de passende thema's;
 }
 
-function showDialog(event) {
+function showDialog(event)
   event.preventDefault();
   uploadDialog.showModal();
 }
 
-function closeDialog(event) {
+function closeDialog(event)
   event.preventDefault();
   uploadDialog.close();
 }
 
-function imgCloseDialog(event) {
+function imgCloseDialog(event)
   event.preventDefault();
   uploadDialog.close();
 }
 
-function handleCheckboxChange() {
+function handleCheckboxChange()
   updateFormData();
 }
 
-function handleFileInputChange() {
+function handleFileInputChange()
   const file = fileInput.files[0];
 
-  if (file) {
+  if (file)
     selectedFileName.textContent = file.name;
     const reader = new FileReader();
-    reader.onload = function (e) {
+    reader.onload = function (e)
       const img = document.createElement('img');
       img.src = e.target.result;
       img.alt = 'Selected Image';
@@ -665,7 +749,7 @@ function handleFileInputChange() {
       const closeButton = document.querySelector('button');
       closeButton.classList.add('close-button');
       closeButton.innerHTML = '&times;'; 
-      closeButton.addEventListener('click', function () {
+      closeButton.addEventListener('click', function ()
         fileInput.value = '';
         customImagePreview.innerHTML = '';
         selectedFileName.textContent = 'Geen bestand geselecteerd';
@@ -675,37 +759,37 @@ function handleFileInputChange() {
       customImagePreview.appendChild(closeButton);
     };
     reader.readAsDataURL(file);
-  } else {
+  } else
     selectedFileName.textContent = 'Geen bestand geselecteerd';
     customImagePreview.innerHTML = '';
   }
 }
 
-function handleSelectedOptionClick() {
+function handleSelectedOptionClick()
   dropdownMenu.classList.toggle('show');
   selectedOption.classList.toggle('open');
 }
 
 // ------------------ event listeners -------------------------------------------------------
-if (themeCheckboxes) {
-  themeCheckboxes.forEach((checkbox) => {
+if (themeCheckboxes)
+  themeCheckboxes.forEach((checkbox) =>
     checkbox.addEventListener('change', handleCheckboxChange);
   });
 }
 
-if (fileInput) {
+if (fileInput)
   fileInput.addEventListener('change', handleFileInputChange);
 }
 
-if (selectedOption) {
+if (selectedOption)
   selectedOption.addEventListener('click', handleSelectedOptionClick);
 }
 
-if (closeDialogButton) {
+if (closeDialogButton)
   closeDialogButton.addEventListener('click', closeDialog);
 }
 
-if (imgCloseDialogButton) {
+if (imgCloseDialogButton)
   imgCloseDialogButton.addEventListener('click', imgCloseDialog);
 }
 
@@ -713,7 +797,7 @@ loadFormData();
 updateSelectedOptionText();
 updateFormData();
 
-export { showDialog, closeDialog, imgCloseDialog, handleSelectedOptionClick, handleCheckboxChange, updateFormData,
+export showDialog, closeDialog, imgCloseDialog, handleSelectedOptionClick, handleCheckboxChange, updateFormData,
   saveFormData};
 
 
@@ -737,38 +821,38 @@ Uteindelijk zag mijn code er zo uit
 
 ```javascript
 
-if (localStorage.getItem(localStorageKey)) {
+if (localStorage.getItem(localStorageKey))
   const savedFormData = JSON.parse(localStorage.getItem(localStorageKey));
 
-  if (titleInput) {
+  if (titleInput)
     titleInput.value = savedFormData.title;
   }
-  if (descriptionTextarea) {
+  if (descriptionTextarea)
     descriptionTextarea.value = savedFormData.description;
   }
-  if (themeCheckboxes) {
-    themeCheckboxes.forEach((checkbox) => {
+  if (themeCheckboxes)
+    themeCheckboxes.forEach((checkbox) =>
       checkbox.checked = savedFormData.themes.includes(checkbox.value);
     });
   }
-  if (imageLinkInput) {
+  if (imageLinkInput)
     imageLinkInput.value = savedFormData.imageLink;
-    imagePreview.innerHTML = `<img src="${savedFormData.imageLink}" alt="">`;
+    imagePreview.innerHTML = `<img src=${savedFormData.imageLink} alt=>`;
   }
-  if (fileInput) {
+  if (fileInput)
     selectedFileName.textContent = savedFormData.file
       ? savedFormData.file.name
-      : "Geen bestand geselecteerd";
+      : Geen bestand geselecteerd;
     customImagePreview.innerHTML = savedFormData.file
-      ? `<img src="${URL.createObjectURL(
+      ? `<img src=${URL.createObjectURL(
           savedFormData.file
-        )}" alt="Selected Image">`
-      : "";
+        )} alt=Selected Image>`
+      : ;
   }
 }
 
-function saveFormData() {
-  const formData = {
+function saveFormData()
+  const formData =
     title: titleInput.value,
     description: descriptionTextarea.value,
     themes: [],
@@ -776,9 +860,9 @@ function saveFormData() {
     file: fileInput.files[0],
   };
 
-  if (themeCheckboxes) {
-    themeCheckboxes.forEach((checkbox) => {
-      if (checkbox.checked) {
+  if (themeCheckboxes)
+    themeCheckboxes.forEach((checkbox) =>
+      if (checkbox.checked)
         formData.themes.push(checkbox.value);
       }
     });
@@ -825,12 +909,100 @@ Ik wil gewoon zeggen dat ik heel erg trots op mezelf ben.
 
 
 # Toepassing meesterproef Vakken
-Een van de criteria van meesterproef was het toepassen van de vakken vanuit minor web. We moesten minimaal 3 vakken toepassen per persoon in ons prototype. Ik heb de volgende vakken toegepast. 
+Een van de criteria van meesterproef was het toepassen van de vakken vanuit minor web. We moesten minimaal 3 vakken toepassen per persoon in ons prototype. Ik heb de volgende vakken toegepast.
+
 ## Browser Technologies 
-Voor het vak browser technologies, 
-## CSS to the rescue 
+Het eerste vak die ik toe pas is browser tech, we hebben het daar meer over progressive enhancement geleerd, het testen op verschillende broswers en het toegankelijk maken voor elk gebruiker. 
+De volgende leerdoelen heb ik toegepast:
+- student begrijpt de principe van Feature detection en hoe je dit kan toepassen, Student kan voorbeeld noemen van hoe Feature Detection werkt en wat fallback is
+- je leert wat Progressive enhancement is en hoe je dit kan toepassen.
+
+Ik heb als progressive enhancement het opslaan van data in localstorage opgeslagen, daarvoor is de fallback als de gebruiker localstorage heeft, dan wordt de data opgeslagen, zo niet dan kan de gebruiker niet de data opslaan in localstorage, maar wel nog sturen naar de database (supabase).
+
+Verder bij het formulier validatie heb ik verschillende fallbacks, wanneer de css en javascript uit staat. 
+
+In html heb ik een maximum en minimun length bij input fields gezet. Zo wordt gebruiker wat gelimiteerd met het invoeren van tekst. 
+
+```html
+  <label for=title>Titel</label>
+                <input type=text id=title name=title placeholder=Geef je wens een titel minlength=2
+                    maxlength=40 required>
+
+```
+
+
+In css heb ik de invalid en valid element gebruikt, wanneer de input field leeg is het rood en wanneer er tekst wordt ingevoerd dan wordt het groen. 
+```css
+input:required:invalid
+  border: .2em solid #f6a192;
+}
+
+input:required:valid
+  border: .2em solid green;
+}
+
+```
+
+In javascript heb ik bij thema's een extra validatie, dat de gebruiker niet meer dan 4 thema's kan selecteren. 
+```javascript
+const maxThemes = 4;
+
+let selectedThemes = [];
+
+function updateSelectedOptionText()
+  selectedThemes = Array.from(themeCheckboxes)
+    .filter((checkbox) => checkbox.checked)
+    .map((checkbox) => checkbox.value);
+
+  themeCheckboxes.forEach((checkbox) =>
+    checkbox.disabled = selectedThemes.length >= maxThemes && !checkbox.checked;
+  });
+}
+
+```
+
+Als de javascript en css uitstaat, krijg de gebruiker toch wel de html validatie mee en kan nogsteeds het formulier versturen (niet zonder javascript).
+
+## CSS to the rescue
+Tijdens het vak css to the rescue had ik geleerd hoe ik met verschillende manier met css kan experimenteren. We probeerden ook de nieuwste technieken van css toe te passen. 
+
+Ik heb de volgende leerdoelen toegepast vanuit het vak css to the rescue:
+- Je hebt begrip van de volle kracht en mogelijkheden van CSS. Je laat zien dat CSS meer kan dan allen web pages 'stylen'.
+- Je hebt begrip van de interactie-technieken van CSS (en HTML). De UX is aangenaam bruikbaar binnen de gekozen context(en)
+
+Ik heb bijvoorbeeld grid en verschillende kleine animaties in het formulier pagina gemaakt. We hebben in het algemeen een aangenaam ux design voor ons prototype aangehouden. Het is makkelijk te navigeren bij ons applicatie (zie test lighthouse, zit ook navigatie erin).
+
+
 ## Web app from scratch 
+Voor het vak Web app from scratch hebben we veel over het fetchen van data vanuit een api geleerd. Dit keer fetch ik en post ik data naar een api/database genaamd Supabase. 
+Zie hierboven hoe ik data post en haal vanuit de database. 
+
+Ik heb de volgende leerdoel toegepast vanuit het vak WAFFS:
+- Data management - you understand how you can work with an external API using asynchronous code. You can retrieve data, manipulate and dynamically convert it to structured html
+
+
 ## Progressive web app
+Voor het vak Progressive web app hebben wij meer naar de backend kant gekeken en dat heb ik zeker ook bij de prototype toegepast. 
+In de server side haal fetch ik en post ik data op het formulier pagina, we gebruiken de database/ api Supabase (opgezet door Jevona). 
+Verder heb ik ook verschillende testen gedaan om de performance van de prototype te verbeteren (zie test lighthouse)
+
+- Serverside rendering You’ve implemented serverside rendering and have articulated how it works and why you should want it.
+- Critical render path You’ve enhanced the critical render path for a better runtime or perceivved performance in multiple ways and have described how you managed to do this.
+
+
+
+
+
+## Human Centered Design 
+Bij het vak Human Centered Design moesten wij rekening houden met 1 soort gebruiker en moesten de user need implementeren in onze prototype. 
+We hebben dit zeker in ons prototype kunnen verwerken, elke week gingen wij met ons opdrachtgever zitten om het te laten testen en elke week kregen wij wel feedback, die gingen wij steeds toe passen in ons prototype. 
+
+Ik heb de volgende leerdoel toegepast vanuit het vak WAFFS:
+ - Testresultaten - Aan de hand van de tests wordt duidelijk gemaakt hoe deze hebben bijgedragen aan het verbeteren van het ontwerp of hoe dit een volgende keer beter of anders kan.
+
+- User Needs - Er is een user scenario geschreven dat aansluit bij de identiteit van de test persoon. Er is een duidelijk en volledig user scenario geschreven dat antwoord geeft op de 4 w-vragen: Who? What? How? en Why?
+
+
 
 
 
@@ -840,7 +1012,7 @@ https://www.npmjs.com/package/multer
 
 
 
-- Developer.mozilla: <dialog>: The Dialog element
+- Developer.mozilla: dialog: The Dialog element
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog?retiredLocale=nl
 
 
@@ -885,6 +1057,24 @@ https://css-tricks.com/form-validation-ux-html-css/
 
 - Alligator.Io. (2020). Styling Form Inputs in CSS With :required, :optional, :valid and :invalid. DigitalOcean.
 https://www.digitalocean.com/community/tutorials/css-styling-form-input-validity 
+
+- Using Each Loop in EJS Template and Express JS. (2021, July 8). The freeCodeCamp Forum. https://forum.freecodecamp.org/t/using-each-loop-in-ejs-template-and-express-js/468398/2 
+
+
+- Supabase Javascript Client - Using filters. (n.d.). https://supabase.com/docs/reference/javascript/using-filters
+
+- EJS - pass data to partial view and use it in every view/page. How can i do that? (n.d.). Stack Overflow. https://stackoverflow.com/questions/60551806/ejs-pass-data-to-partial-view-and-use-it-in-every-view-page-how-can-i-do-that
+
+- Hallo IJburg - houdt je verbonden. (n.d.). halloijburg.nl. https://halloijburg.nl/
+
+- Hallo Strandeiland. (n.d.). hallostrandeiland.nl. https://hallostrandeiland.nl/
+
+- Isheanesu. (2022). How To SELECT, COUNT and JOIN Supabase Data. DEV Community. https://dev.to/thisisisheanesu/how-to-select-count-and-join-supabase-data-3ihk
+
+
+- Shooft. (z.d.). CSS Filter: Desaturate Example CodePen. Geraadpleegd van https://codepen.io/shooft/pen/xxVmpEP?editors=0110
+
+
 
 
 
