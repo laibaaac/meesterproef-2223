@@ -362,7 +362,7 @@ Bij html ziet de validation zo er uit
 ```
 
 
-Bij css ziet de validation er zo uit
+Bij css ziet de validation er zo uit, wanneer er text in de input field zit, wordt het groen, zo niet dan is het rood. 
 
 ```css
 textarea:required:invalid {
@@ -374,19 +374,27 @@ textarea:required:valid {
 }
 ```
 
-Bij javascript ziet de validation er zo uit
+In javascript zet ik een limiet bij de thema's de gebruiker kan maximaal alleen 4 thema's kiezen, zo zorgen we ervoor dat de gebruiker bijvoorbeeld niet alle thema's selecteerd
+
+Zo ziet de validation er zo uit
 
 ```javascript
-if (titleInput) {
-  titleInput.addEventListener('input', function() {
-    if (titleInput.value.trim() === '') {
-      titleInput.setCustomValidity('Please enter a title');
-    } else {
-      titleInput.setCustomValidity('');
-    }
+const maxThemes = 4;
+
+let selectedThemes = [];
+
+function updateSelectedOptionText() {
+  selectedThemes = Array.from(themeCheckboxes)
+    .filter((checkbox) => checkbox.checked)
+    .map((checkbox) => checkbox.value);
+
+  themeCheckboxes.forEach((checkbox) => {
+    checkbox.disabled = selectedThemes.length >= maxThemes && !checkbox.checked;
   });
 }
 ```
+
+
 
 ## Javascript errors 
 Tijdens het mergen van de code, kwamen we steeds veel errors tegen. Er kwamen steeds variable undefined, niet goed geplaatst, etc. Localstorage heeft een bug en nog veel meer. Omdat we in modules werken, kan het soms tricky zijn om code op te halen en die dan in de main.js terug te halen. Gelukkig hadden wij de tijd genomen tijdens de refator om de errors te kunnen fixen. 
@@ -394,13 +402,11 @@ Tijdens het mergen van de code, kwamen we steeds veel errors tegen. Er kwamen st
 Jevona was in controle van version control, zij was ons github master. Als je een error had, kon je het zelf oplossen, of ging Jevona soms samen zitten om eraan te werken. 
 
 
-
-
 ## Form data versturen naar database
 Wij gebruiken de database, supabase. Ik heb geen ervaring van supabase, dus moest ik en ook de andere gewend aan raken. 
 Aan mij was de opdracht gegeven, van het posten van het formulier data naar de database en die dan terug te halen vanuit de database naar de index.ejs
 
-Hier laat ik even mijn code van versturen van de data naar de database 
+Hier laat ik even mijn code van versturen van de data (van het formulier) naar de database zien. 
 
 ```javascript
 
@@ -476,8 +482,6 @@ Zie hier de verbeterde versie
 
 
 
-
-
 ## Multer 
 **Wat is multer?**
 Multer is een middleware voor het verwerken van multipart/form-data in Node.js en Express.js. Het wordt vaak gebruikt in combinatie met webapplicaties die bestandsuploads ondersteunen. Multer maakt het gemakkelijk om bestanden te ontvangen via HTTP-verzoeken en ze op te slaan op de server.
@@ -506,21 +510,324 @@ Ik heb deze week wel nog veel taken kunnen afmaken gelukkig, ik vind hoe het for
 
 
 # Week 5
+Dit is de laatste week, het was een beetje chaotisch, omdat het natuurlijk de laatste week is. 
+Deze week waren we bezig met de laatste foutjes verbeteren, we hadden uitgebreide code refactor nog kunne doen op donderdag. 
+Zo was onze code productie ready.
+We hadden best veel errors, dit gebeurt natuurlijk altijd in de laatste week, daarom namen wij even de tijd om deze op te lossen en voor het einde van de sprint (donderdag) alles af te hebben. We moesten ook de tijd nemen om alle documentatie bij te houden, die hadden we natuurlijk al, alleen moesten wij nog een paar kleine dingetjes erbij zetten. 
+
+## Documentatie
+typen, typen en nogmaals typen. 
+Ik was meerendeels bezig met het afmaken van de check in en check outs op scrum, we hebben elke dag de scrum bij gehouden. Alleen de laatste week hadden wij geen tijd meer om de check in en check outs bij te houden. Op donderdag was ik nog even hier mee bezig en op de gezamenlijke repo, was ik ook bezig met de design rationale. Meer vertellen over mijn deel. 
+Naast de documentatie had ik nog een aantal dingen die ik moest afronden.
+
+## Testen  (lighthouse)
+Hilal en ik waren bezig met het testen van de prototype, we hebben hiervoor de lighthouse gebruikt. 
+Hilal ging aan de slag met de desktop variant er van en ik ging met de mobiel variant. 
+
+Eerst over het algemeen waren de score best hoog, behalve de index pagina had een score van 60. 
+
+Ik bleef maar dingen aanpasen en door testen, uiteindelijk had ik alles boven de 90. 
+De volgende dingen moest ik aanpassen:
+- Meta name
+```html
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fffff"/>
+<meta name="Strandeiland" content="Welkom op Strandeiland.">
+<meta name="description" content="Hallostrandeiland.nl is een website dat gaat over het versturen van wensen voor het nietu.">
+<meta name="Author: Hilal Keisha Jevona Laiba">
+<link rel="stylesheet" href="/css/global.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet" media="all">
+<script src="https://kit.fontawesome.com/87a1015511.js" crossorigin="anonymous" defer></script>
+<link rel="manifest" href="/manifest.json">
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+<title> <%= title %></title>
+```
+- Reduce css 
+- Img resizing (dit kon ik niet aanpassen, want de afbeelding komen rechtstreeks vanuit de database)
+foto hiero 
+
+Na dat Jevona de css had geminified (bij de reduce css)
+foto hiero
+
+
+## Code refactor 
+**Code vanuit script.js eruit halen en die zetten in form.js**
+Ik heb heel veel javascript code voor mijn formulier en die is allemaal erin gesmeten in de script.js, wij gebruiken zelf modules en script.js is de main file. 
+Om de script.js wat overzichtelijk te houden, moet is mijn javascript code naar de form.js verhuizen en die dan later op te roepen in mijn script.js.
+
+```javascript 
+import { selectedOption, dropdownMenu, localStorageKey, themeCheckboxes, fileInput, customImagePreview, selectedFileName,
+  savedFormData, imageLinkInput, imagePreview, titleInput, descriptionTextarea, uploadDialog, closeDialogButton, imgCloseDialogButton, themes } from "./modules/variables.js";
+
+function loadFormData() {
+  if (savedFormData) {
+    if (titleInput) {
+      titleInput.value = savedFormData.title;
+    }
+
+    if (descriptionTextarea) {
+      descriptionTextarea.value = savedFormData.description;
+    }
+
+    if (themeCheckboxes) {
+      themeCheckboxes.forEach((checkbox) => {
+        checkbox.checked = savedFormData.themes.includes(checkbox.value);
+      });
+    }
+
+    if (imageLinkInput) {
+      imageLinkInput.value = savedFormData.imageLink;
+      imagePreview.innerHTML = `<img src="${savedFormData.imageLink}" alt="">`;
+    }
+
+    if (fileInput) {
+      selectedFileName.textContent = savedFormData.file ? savedFormData.file.name : "Geen bestand geselecteerd";
+      customImagePreview.innerHTML = savedFormData.file ? `<img src="${URL.createObjectURL(savedFormData.file)}" alt="Selected Image">` : "";
+    }
+  }
+}
+
+function saveFormData() {
+  const formData = {
+    title: titleInput.value,
+    description: descriptionTextarea.value,
+    themes: [],
+    imageLink: imageLinkInput.value,
+    file: fileInput.files[0]
+  };
+
+  if (themeCheckboxes) {
+    themeCheckboxes.forEach((checkbox) => {
+      if (checkbox.checked) {
+        formData.themes.push(checkbox.value);
+      }
+    });
+  }
+  localStorage.setItem(localStorageKey, JSON.stringify(formData));
+}
+
+function updateSelectedOptionText() {
+  const selectedThemes = Array.from(themeCheckboxes)
+    .filter((checkbox) => checkbox.checked)
+    .map((checkbox) => checkbox.value);
+
+  themeCheckboxes.forEach((checkbox) => {
+    checkbox.disabled = selectedThemes.length >= maxThemes && !checkbox.checked;
+  });
+}
+
+function updateFormData() {
+  const selectedCheckboxes = Array.from(themeCheckboxes)
+    .filter((checkbox) => checkbox.checked)
+    .map((checkbox) => checkbox.value);
+
+  const selectedThemes = themes
+    .filter((theme) => selectedCheckboxes.includes(theme.id))
+    .map((theme) => theme.label);
+
+  selectedOption.textContent = selectedThemes.length > 0 ? selectedThemes.join(", ") : "Selecteer de passende thema's";
+}
+
+function showDialog(event) {
+  event.preventDefault();
+  uploadDialog.showModal();
+}
+
+function closeDialog(event) {
+  event.preventDefault();
+  uploadDialog.close();
+}
+
+function imgCloseDialog(event) {
+  event.preventDefault();
+  uploadDialog.close();
+}
+
+function handleCheckboxChange() {
+  updateFormData();
+}
+
+function handleFileInputChange() {
+  const file = fileInput.files[0];
+
+  if (file) {
+    selectedFileName.textContent = file.name;
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      const img = document.createElement('img');
+      img.src = e.target.result;
+      img.alt = 'Selected Image';
+      customImagePreview.innerHTML = '';
+      const closeButton = document.querySelector('button');
+      closeButton.classList.add('close-button');
+      closeButton.innerHTML = '&times;'; 
+      closeButton.addEventListener('click', function () {
+        fileInput.value = '';
+        customImagePreview.innerHTML = '';
+        selectedFileName.textContent = 'Geen bestand geselecteerd';
+        closeButton.remove();
+      });
+      customImagePreview.appendChild(img);
+      customImagePreview.appendChild(closeButton);
+    };
+    reader.readAsDataURL(file);
+  } else {
+    selectedFileName.textContent = 'Geen bestand geselecteerd';
+    customImagePreview.innerHTML = '';
+  }
+}
+
+function handleSelectedOptionClick() {
+  dropdownMenu.classList.toggle('show');
+  selectedOption.classList.toggle('open');
+}
+
+// ------------------ event listeners -------------------------------------------------------
+if (themeCheckboxes) {
+  themeCheckboxes.forEach((checkbox) => {
+    checkbox.addEventListener('change', handleCheckboxChange);
+  });
+}
+
+if (fileInput) {
+  fileInput.addEventListener('change', handleFileInputChange);
+}
+
+if (selectedOption) {
+  selectedOption.addEventListener('click', handleSelectedOptionClick);
+}
+
+if (closeDialogButton) {
+  closeDialogButton.addEventListener('click', closeDialog);
+}
+
+if (imgCloseDialogButton) {
+  imgCloseDialogButton.addEventListener('click', imgCloseDialog);
+}
+
+loadFormData();
+updateSelectedOptionText();
+updateFormData();
+
+export { showDialog, closeDialog, imgCloseDialog, handleSelectedOptionClick, handleCheckboxChange, updateFormData,
+  saveFormData};
+
+
+```
 
 
 
+**EJS schoon maken, geen comments of extra white space**
+Verder om de ejs files schoon te houden, moest ik alle comments er uit halen en ook onnodige white space. 
+Verder ging de code goed formatten, dat deed ik heel makkelijk met de extension beautify.
+
+**Code in engels (geen nederlands, zie coding standards)**
+In ons coding standards, stond dat alles in nederlands gaat zijn, behalve ons code. Om aan de agreement te houden, ging ik nog kijken wat in nederlands is en die ging ik meteen vervangen iets in engels
+
+
+## Localstorage
+Ik heb natuurlijk nieuwe dingen in mijn formulier erbij gezet, maar die worden nog niet in mijn localstorage opgeslagen. 
+Ik moest hiervoor mijn localstorage code weer aanpassen, checken wat wel en niet al wordt opgeslagen. 
+Uteindelijk zag mijn code er zo uit
+
+
+```javascript
+
+if (localStorage.getItem(localStorageKey)) {
+  const savedFormData = JSON.parse(localStorage.getItem(localStorageKey));
+
+  if (titleInput) {
+    titleInput.value = savedFormData.title;
+  }
+  if (descriptionTextarea) {
+    descriptionTextarea.value = savedFormData.description;
+  }
+  if (themeCheckboxes) {
+    themeCheckboxes.forEach((checkbox) => {
+      checkbox.checked = savedFormData.themes.includes(checkbox.value);
+    });
+  }
+  if (imageLinkInput) {
+    imageLinkInput.value = savedFormData.imageLink;
+    imagePreview.innerHTML = `<img src="${savedFormData.imageLink}" alt="">`;
+  }
+  if (fileInput) {
+    selectedFileName.textContent = savedFormData.file
+      ? savedFormData.file.name
+      : "Geen bestand geselecteerd";
+    customImagePreview.innerHTML = savedFormData.file
+      ? `<img src="${URL.createObjectURL(
+          savedFormData.file
+        )}" alt="Selected Image">`
+      : "";
+  }
+}
+
+function saveFormData() {
+  const formData = {
+    title: titleInput.value,
+    description: descriptionTextarea.value,
+    themes: [],
+    imageLink: imageLinkInput.value,
+    file: fileInput.files[0],
+  };
+
+  if (themeCheckboxes) {
+    themeCheckboxes.forEach((checkbox) => {
+      if (checkbox.checked) {
+        formData.themes.push(checkbox.value);
+      }
+    });
+  }
+  localStorage.setItem(localStorageKey, JSON.stringify(formData));
+}
+```
+
+## Reflectie
+Deze week was de laatste week van de eindopdracht. We hebben ontzettend veel geleerd tijdens dit minor, maar ik vind dat wij nog meer hebben kunnen tijdens de meesterproef. We hebben zelf de nieuwe technieken die wij hebben geleerd vanuit de minor moeten toepassen. Hierdoor viel op sommige onderdelen nu pas het kwartje😂
+Deze week heb ik best veel gedaan, qua fine tunen, productie ready maken van de code. Laatste momenten gaat het altijd fout met code, dan opeens krijg je veel errors, etc. Die hadden wij zeker, ik probeerde altijd mijn errors op te lossen voordat ik iets stuurde, maar tijdens  het mergen ging het toch fout. Verder hebben wij ook verschillende tests afgelegd, ik heb met lighthouse de test op mobiel afgelegd, ik heb de score tot 96 kunnen opbouwen, hierop ben ik zeker trots op.
 
 
 # Reflectie
-## Wat heb ik geleerd?
-## Wat ging er goed?
-## Wat ging er minder goed?
-## Waar ben ik trots op
+De afgelopen 5 weken zijn heel snel voorbijgevlogen!
+We hebben ontzettend veel kunnen doen in 5 weken, met de nieuwe kennis vanuit minor web. 
+Hier leg ik even uit wat ik heb geleerd gedurend de 5 weken (meesterproef)
 
+## Wat heb ik geleerd?
+Vanuit minor web heb ik ontzettend veel geleerd.  In de minor Web Design & Development leer je interactieve toepassingen maken met HTML, CSS en JavaScript. In verschillende vakken en projecten leer je over browsers, het ‘real time web’, performance, rapid prototyping, usability, documenteren, versiebeheer, debuggen, testen, responsive, reactive, micro interacties, API’s en … het web.
+Tijdens de meesterproef moet je zelf kijken hoe je de bepaalde elementen vanuit verschillende vakken in je applicatie kan toepassen. Tijdens het toepassen van sommige elementen viel het kwartje nu pas, of ik vond het makkelijker te implementeren vergeleken de eerste keer. 
+
+Wat ik verder heb geleerd is hoe wij samenwerken tijdens het realiseren van een front-end / back-end  applicatie. 
+We hebben veel maatregelen moeten ondernemen, om de samenwerking te bevorderen. 
+De version control, dus met github (mergen, vanuit verschillende branches werken) moesten wij steeds heel goed communiceren, om conflicten met de code te voorkomen. 
+De github master was Jevona, zij komt ook vanuit de opleiding HBO-ICT, ik heb zeker een paar voorbeelden van haar overgenomen. Ze deed het heel goed met vermijden van merge conflict en ook al als er merge conflicts waren, pakte ze het heel gemakkelijk aan. 
+
+## Wat ging er goed?
+Ik vind de samenwerking tussen ons ging best goed, we namen zelf taken op zich. Door middel van scrum werd ons samenwerking al helemaal bevordert. Ieder van ons wist wel we moeten iets doen en niet still blijven en niks doen. 
+We hebben altijd gecommuniceerd als er wat is en we hebben elkaar altijd laten weten als er iets is, communiceer het gelijk. 
+Qua version control ging het ook goed, we werkte steeds vanuit verschillende branches. Waardoor wij ons code nog altijd konden beschermen. 
+
+
+## Wat ging er minder goed?
+Bij ons hebben we afgesproken voor elke verandering een nieuwe branch te maken, zo verkomen we de merge conflict. Alleen vergat ik steeds bij een nieuwe verandering een branch te maken. Tijdens het mergen, moest Jevona heel veel stukken code dan mergen en dit is echt gevaarlijk. 
+Ik dacht steeds oh mijn nieuwe feature (die ik net heb geimplementeerd) heeft nog een error, die moet eerst opgelost worden, voordat ik die push naar github. Maar wat eigenlijk de bedoeling is om de nieuwe feature eerst te pusen en dan een nieuwe branch aan te maken waar ik de error van de feature op los. 
+Ik vond dit een beetje moeilijk het te onderscheiden. Voor de volgende keer ga ik dit zeker proberen te doen.
+
+## Waar ben ik trots op
+Ik ben trots op het prototype, waar we 5 weken hebben aan gewerkt. We hebben echt veel bloed, zweet en tranen erin gestoken.
+Ik ben trots op hoe ik zoveel elementen vanuit verschillende vakken heb laten implementeren in het formulier pagina. Tijdens het implementeren viel het kwartje pas, dit gebeurd altijd met mij, ik moet wat meer tijd nodig hebben om een bepaalde onderwerpen te kunnen begrijpen. 
+Ik ben ook trots op dat zo ver ben gekomen om aan meesterproef te kunnen deelnemen, in het begin van de minor web had ik major imposter syndrome. Ik dacht dat ik het niet aan kon en ook niet tot meesterproef zou komen, maar het is toch gelukt, ik heb alle vakken van minor web gehaald en ook een succesvolle meesterproef kunnen afronden.
+Ik wil gewoon zeggen dat ik heel erg trots op mezelf ben. 
 
 
 # Toepassing meesterproef Vakken
-## Browser Tech
+Een van de criteria van meesterproef was het toepassen van de vakken vanuit minor web. We moesten minimaal 3 vakken toepassen per persoon in ons prototype. Ik heb de volgende vakken toegepast. 
+## Browser Technologies 
+Voor het vak browser technologies, 
 ## CSS to the rescue 
 ## Web app from scratch 
 ## Progressive web app
