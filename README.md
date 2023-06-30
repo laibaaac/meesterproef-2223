@@ -269,7 +269,10 @@ De opdrachtgever geloofde niet dat het een css animatie is, hij dacht dat het ee
 
 
 ## Localstorage 
-Wat als de gebruiker aan het typen was en 
+Wat als de gebruiker aan het typen was en perongeluk refreshed. Dan moet de gebruiker weer alles opnieuw invullen. 
+
+Hiervoor heb ik als progressive enhancement het opslaan van data in localstorage opgeslagen, daarvoor is de fallback als de gebruiker localstorage heeft, dan wordt de data opgeslagen, zo niet dan kan de gebruiker niet de data opslaan in localstorage, maar wel nog sturen naar de database (supabase).
+
 
 ```javascript
 // Function to update form data
@@ -289,14 +292,91 @@ function updateFormData() {
 
 ```
 
-## Dropdown menu en afbeelding onderzoek
+## Dropdown menu 
+Het maken van de dropdown menu doe je normaal met de select tag, alleen is die heel slecht om te stijlen. Wij willen een hele mooie dropdown menu, die je makkelijk kan stijlen en ook kan togglen. 
+
+Ik ging onderzoeken naar verschillende opties van een dropdown menu, ik kwam toen op dit.
+
+```html
+  <fieldset class="dropdown">
+                    <div class="selected-option" id="selectedOption" tabindex="0">Selecteer de passende thema's
+                    </div>
+                    <p class="valid">Kies maximaal uit 4 thema's</p>
+                    <div class="dropdown-container" id="themeDropdownMenu">
+                        <ul class="dropdown-menu">
+                            <% themes.forEach(theme =>{ %>
+                            <li>
+                                <label>
+                                    <input type="checkbox" value="<%= theme.id %>" name="theme">
+                                    <span>
+                                        <%= theme.label %>
+                                    </span>
+
+                                </label>
+                            </li>
+                            <% }); %>
+                        </ul>
+                    </div>
+                </fieldset>
+
+```
+
+hier maak ik gebruik van een fieldset, daarin heb ik ul en li's. Die zijn wat makkelijker te stijlen en om de dropdown menu open en dicht te kunnen doen moet ik wel javascript gebruiken. 
 
 
-## Bevestiging pagina maken
+```javascript
+
+function handleSelectedOptionClick() {
+  dropdownMenu.classList.toggle("show");
+  selectedOption.classList.toggle("open");
+}
+
+```
+
+Ik voeg een class toe om de dropdown menu te togglen, ik zet een class show en open, open wanneer het open dicht moet en show wanneer de dropdown menu moet gezien worden
 
 
 ## Img preview
+Ik heb een optie om een link te zetten en die kan je als een afbeelding doorsturen naar de database, ook heb ik de optie om een bestand te selecteren en van dat een soort voorbeeld te zien. Ik wil van beide opties een voorbeeld laten zien van de afbeeldingen, 
+Hier over heb ik wat onderzoek gedaan, maar hier bleef ik vast. Hierover ga ik even aan  pip en ine hulp vragen. 
 
+Op dit moment heb ik dit 
+
+```javascript
+ if (file) {
+    selectedFileName.textContent = file.name;
+
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      const img = document.createElement("img");
+      img.src = e.target.result;
+      img.alt = "Selected Image";
+      customImagePreview.innerHTML = "";
+
+      const closeButton = document.createElement("button");
+      closeButton.classList.add("close-button");
+      closeButton.innerHTML = "&times;"; // Use × symbol as the close icon
+
+      closeButton.addEventListener("click", function() {
+        // Clear the file input value
+        fileInput.value = "";
+
+        // Clear the image preview
+        customImagePreview.innerHTML = "";
+        selectedFileName.textContent = "Geen bestand geselecteerd";
+
+        // Remove the close button
+        closeButton.remove();
+      });
+
+      customImagePreview.appendChild(img);
+      customImagePreview.appendChild(closeButton);
+    };
+    reader.readAsDataURL(file);
+  } else {
+    selectedFileName.textContent = "Geen bestand geselecteerd";
+
+```
 
 ## Feedback van opdrachtgever / docent (code en design review) verwerken
 Code review
@@ -314,10 +394,25 @@ Begin van een nieuwe sprint!! We hebben nog 2 weken te gaan!
 Maar dit betekent dat we echt aan de bak moesten gaan!
 Ik heb deze week ontzettend veel gedaan, ik probeerde verschillende elementen echt te laten werken. 
 Ik heb de volgende taken deze week gedaan. 
+## Img preview
 
-## Img preview 
+```javascript
+ if (customImagePreview) {
+      customImagePreview.innerHTML = "";
+      customImagePreview.appendChild(img);
+    }
 
+
+```
 ## Img link parsen 
+
+```javascript
+if (imageLinkInput) {
+  imageLinkInput.addEventListener("input", () => {
+    imagePreview.innerHTML = `<img src="${imageLinkInput.value}" alt="">`;
+  });
+}
+```
 
 ## Toggle toepassen 
 
