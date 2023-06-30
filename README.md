@@ -379,14 +379,14 @@ Op dit moment heb ik dit
 ```
 
 ## Feedback van opdrachtgever / docent (code en design review) verwerken
-Code review
-7 juni (week 2) Robert code review (data sanitization)
-
+Deze week hadden wij  onze eerste code review 
+Op 7 juni kreeg ik van Robert code review over het kunnen controleren van de data vanuit het formulier die naar de database wordt gesturud. 
+Dit is de data sanitization van het formulier. Lijkt mij wel interessant, ik ga even kijken als ik de tijd er voor heb op dit daadwerkelijk te kunnen toepassen. 
+Ik vroeg dit aan de opdrachtgever, als er veel troep werd ingegooid op zijn website en hij zei hij hij heeft de website 8 jaartjes al en  nogsteeds heeft hij geen nare content gezien. 
 
 ## Reflectie 
 Deze week zijn we bezig geweest met de design verder uit te werken en de functionaliteiten uit te werken. Voor mijn gevoel ging het best goed, maar ik kreeg een aantal errors net als de thema’s kon ik niet goed stylen, hier aan had ik te veel tijd aan besteed. Uiteindelijk heeft Keisha mij enorm geholpen met de thema, verder heb ik ook de localstorage erin verwerkt.
 Verder hebben wij constant de feedback van onze docenten ook erin verwerkt, wij hopen dat wij een fantastisch prototype kunnen opleveren!!!
-
 
 
 # Week 3
@@ -394,7 +394,9 @@ Begin van een nieuwe sprint!! We hebben nog 2 weken te gaan!
 Maar dit betekent dat we echt aan de bak moesten gaan!
 Ik heb deze week ontzettend veel gedaan, ik probeerde verschillende elementen echt te laten werken. 
 Ik heb de volgende taken deze week gedaan. 
+
 ## Img preview
+Vorig week was ik bezig met het laten zien van een geselecteerde afbeelding. De afbeelding werd toch niet gepakt. Hierdoor was ik deze week weer bezig met het zoeken van een nieuwe manier van een voorbeeld laten zien. Hieronder is het gelukt met een voorbeeld laten zien bij een geselecteerd input type file. 
 
 ```javascript
  if (customImagePreview) {
@@ -405,6 +407,9 @@ Ik heb de volgende taken deze week gedaan.
 
 ```
 ## Img link parsen 
+Vorige week  kreeg ik een error bij het parsen van de link en een voorbeeld ervan te krijgen. Deze week heb ik weer onderzoek gedaan en gekeken hoe ik dit toch anders kan aanpakken. Ik had Ine gevraagd om hulp en zij hielp mij hiermee. 
+
+Wij zijn toen op de volgende gekomen. 
 
 ```javascript
 if (imageLinkInput) {
@@ -415,17 +420,105 @@ if (imageLinkInput) {
 ```
 
 ## Toggle toepassen 
+Vorige week besefte ik dat de toggle niet zo ging, de classes werder uberhaupt niet erbij gezet. 
+Deze week was ik ook bezig met de toggle en ik kwam toen hierop. 
+
+
+```javascript 
+
+
+function handleSelectedOptionClick() {
+  dropdownMenu.classList.toggle('show');
+  selectedOption.classList.toggle('open');
+}
+
+
+```
 
 ## De design aanpassen
+foto hiero
+
 
 ## Formulier post
+Het posten van de data vanuit het formulier. oh man oh man, dit was moeilijk!!!
+Ik kwam er maar niet uit,  ik ging van alles zoeken, maar ik kwam er maar niet, omdat ik supabase niet begreep. 
+Ik ging toen even kijken hoe supabase aan de slag gaat en hoe je data kan versturen met ejs. 
+Na veel trial en error kwam ik op dit. 
+```javascript
+app.post("/form", async (req, res) => {
+
+  console.log('even kijken');
+  
+  const {error} = await supabase
+      .from('form')
+      .insert({
+        title: req.body.titel,
+        description: req.body.beschrijving,
+        theme: req.body.thema,
+        image: req.body.imageLink,
+        link: req.body.file
+      })
+  if (error) {
+      res.send(error);
+  }
+  res.send("created!!");
+});
+```
+
+Ik ging toen vragen aan Jevona en ze gaf aan dat de data toch niet verstuurd wordt.
+Ik ga hier volgende week aan werken, want ik kom er maar niet uit. 
+
 
 ## Afbeelding pop up
+Vasilis gaf deze week aan, dat de bestand selecteren en de link kunnen doorgeven als afbeelding, te veel gaat zijn op een pagina en dat ik beter een pop up ervan kan maken. 
+Ik ging toen aan de slag met het maken van de pop, ik vond het nog lastig, want ik heb nog nooit een pop up gemaakt. 
 
+uiteindelijk kwam ik op het idee een div te maken en de content erin te zetten, om die uiteindelijk als een pop te stijlen. 
+Alleen de stijling ervan ging niet zo lekker. 
+
+```html 
+        <div id="links">
+                        <label for="links">Websites waar je rechtvrije afbeelding kan vinden</label>
+                        <div class='linkjes'>
+                            <a href="https://unsplash.com/">Unsplash</a>
+                            <a href="https://www.pexels.com/nl-nl/">Pexels</a>
+                            <a href="https://pixabay.com/nl/">Pixabay</a>
+                        </div>
+            
+    
+                        <p class="hierarchy">Link</p>
+           
+                        <input type="text" name="imageLink" id="imageLink" placeholder="Plaats hier uw link">
+                        <div id="imagePreview"></div>
+    
+    
+    
+                        <label for="or">Of</label>
+    
+                        <p class="hierarchy">Bestand</p>
+    
+                        <div class="file-input-container">
+                        <img src="/images/wolkje.png" alt="een wolkje dat staat voor uploaden van een afbeelding">
+                        <p>Selecteer een bestand</p>
+                        <input type="file" id="file" name="file" accept="image/jpeg, image/png, image/jpg" >
+                        </div>
+                        <div id="customImagePreview"></div>
+                        <p id="selectedFileName">Geen bestand geselecteerd</p>
+                        <div id="closeButton" class="hidden">&#10006;</div>
+             
+              </div>
+```
+Toevallig kwam ik Ine tegen en ik had het over de pop up, zij raadde aan om ipv een div een dialog te maken, die krijgt een algemene stijling mee en is altijd boven de content. Dit ga ik volgende week toepassen
 
 ## Feedback van opdrachtgever / docent (code en design review) verwerken
-14 juni (week 3) Justus: hierarchy van code, kijken waar precies waar hoort
-15 juni (week 3) Vasilis: form feedback, pop up button
+We hebben deze week onze eerst design review gehad en ook de code review.
+
+Op 14 juni kreeg ik van  Justus feedback op de volgenge 
+- De hierarchy van code en content moet ik op letten 
+- Ik moet goed kijken bij wat bij waar hoort. 
+
+
+Verder kreeg ik ook op 15 juni van Vasilis design review, hij gaf wat feedback op het formulier (kleur en wat meer experimenteren qua input)en ook ging ik wat vragen stellen over het maken van de  pop up. 
 
 ## Reflectie 
 Deze week was onze 3e week, we zijn langzamerhand aan het voorbereiden voor het leveren van het product, deze week wouden wij de designimplementatie afronden en hierna focussen op het fine tunen van het eind product, maar na de feedback van de opdrachtgever en de docenten hebben wij besloten om wat nog meer tijd aan design te besteden. We hebben wel de database geïmplementeerd en proberen ons voor te bereiden voor het eind sprint. 
@@ -661,6 +754,13 @@ Zie hier de verbeterde versie
 <img width=1300 alt=Schermafbeelding 2023-06-28 om 15 17 47 src=https://github.com/RainbowJM/strandeiland/assets/94360732/a1b6dfe5-5358-482c-a2a6-27a6270c1096>
 
 ## Feedback van opdrachtgever / docent (code en design review) verwerken
+Deze week kreeg ik voor de laatste keer een code en design review. Dit was zeer handig, want zo kon ik nog de laatste feedback krijgen
+Op 21 juni kreeg ik van Justus code review: 
+hij vond de samenwerking etc. goed gaan
+Ik had alleen nog een vraag over het versturen van de bestand naar de database, hij raadde aan om multer te gebruiken. Alleen jammer genoeg vanwege de tijdsgebrek, heb ik alleen onderzoek er naar gedaan. Als ik wat meer tijd had, zou ik het meteen kunnen implementeren 
+ 
+Op 22 juni kreeg ik van vasilis design review:
+Ik had een vraag over de verschillende fallbacks in mijn code en hoe ik dat makkelijk kan implementeren. Vasilis had een hele makkelijke manier, je zet in je html een class in en als javascript aan is, dan kan je met de class de dropdown menu verbergen, als de javascript uit staat, dan blijft het uitgeklapt. Dit was heel handig en heb ik het meteen geimplementeerd in mijn code. 
 
 ## Multer 
 **Wat is multer?**
