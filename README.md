@@ -515,6 +515,9 @@ Alleen de stijling ervan ging niet zo lekker.
 ```
 Toevallig kwam ik Ine tegen en ik had het over de pop up, zij raadde aan om ipv een div een dialog te maken, die krijgt een algemene stijling mee en is altijd boven de content. Dit ga ik volgende week toepassen
 
+
+
+
 ## Feedback van opdrachtgever / docent (code en design review) verwerken
 We hebben deze week onze eerst design review gehad en ook de code review.
 
@@ -627,7 +630,7 @@ Zie hier de code.
                 </div>
 
 ```
-
+<img width="500" alt="Schermafbeelding 2023-06-30 om 10 11 17" src="https://github.com/laibaaac/meesterproef-2223/assets/94360732/07f692b8-79ee-4799-81c4-87ca710173c3">
 
 ## Form validatie 
 Het valideren van een formulier hebben wij tijdens het vak browser technologies geleerd. 
@@ -671,6 +674,7 @@ function updateSelectedOptionText()
   });
 }
 ```
+<img width="500" alt="Schermafbeelding 2023-06-30 om 10 12 04" src="https://github.com/laibaaac/meesterproef-2223/assets/94360732/fcb58a67-9fad-4a95-b52d-8be8921f6f6c">
 
 
 
@@ -745,6 +749,7 @@ router.post(/form, async (req, res) =>
   }
 });
 ```
+<img width="500" alt="Schermafbeelding 2023-06-30 om 10 12 43" src="https://github.com/laibaaac/meesterproef-2223/assets/94360732/9a8e23f0-2fc4-44b8-aead-a21087033abc">
 
 ## Design afronden
 Tijdens het heen en weer testen, kwam ik een paar punten tegen die ik wou toepassen in mijn productbio net als:
