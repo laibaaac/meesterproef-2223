@@ -72,6 +72,7 @@ Dus aan ons de opdracht om de volgende functionaliteiten toe te voegen:
   * [Javascript errors](#javascript-errors)
   * [Form data versturen naar database](#form-data-versturen-naar-database)
   * [Design afronden](#design-afronden)
+    * [Feedback van opdrachtgever / docent (code en design review) verwerken](#feedback-van-opdrachtgever---docent--code-en-design-review--verwerken-2)
   * [Multer](#multer)
   * [Reflectie](#reflectie-3)
 - [Week 5](#week-5)
@@ -564,7 +565,7 @@ Zie hier de verbeterde versie
 
 <img width=1300 alt=Schermafbeelding 2023-06-28 om 15 17 47 src=https://github.com/RainbowJM/strandeiland/assets/94360732/a1b6dfe5-5358-482c-a2a6-27a6270c1096>
 
-
+## Feedback van opdrachtgever / docent (code en design review) verwerken
 
 ## Multer 
 **Wat is multer?**
