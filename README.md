@@ -1,4 +1,5 @@
 # Meesterproef Strandeiland
+[Team repo](https://github.com/RainbowJM/strandeiland) 
 
 <img width="200" alt="" src="https://github.com/laibaaac/meesterproef-2223/assets/94360732/04c50d13-61b1-44f9-a76b-9f3d1d3cef71">
 
@@ -87,34 +88,110 @@ Dus aan ons de opdracht om de volgende functionaliteiten toe te voegen:
 
 
 # Week 1
-## Wat heb ik deze week gedaan
+Voor het begin van meesterproef, werd er een kick-off gehouden. Daarin werd uitgelegd wat we de aankomende weken gaan doen, wat de opdrachten precies inhouden en hoe de beoordeling in elkaar zit. 
+Na het verdeling van de groepen, is ons groep (Keisha, Jevona, Hilal en ik) wat dieper in de opdracht gaan duiken. We hadden vrijdag al een gesprek met ons opdrachtgever en we wouden voorbereid naar het gesprek. 
 
-
-
-
-Ik heb deze week de volgende taken afgerond. 
- 
 ##  Scrum opzet
+We zijn in teams verdeeld en wij hebben een team van 4. Samenwerking en het opzetten van het project kan moeilijk zijn. 
+Hiervoor hebben wij gekozen om aan de scrum methode te houden. Dit houdt in elke dag een daily standup hebben, waar we kijken waar we zijn en wat we moeten doen, aan de hand daarvan stellen wij taken op voor de dag en gaan aan die werken. Zo kunnen we conflicten tussen de groep voorkomen en bevordert het ons samenwerking. 
+Ik hou de scrum elke dag bij, ik ben dus de scrum master. 
+Zie hier de scrum:
+https://github.com/RainbowJM/strandeiland/wiki/Daily-Stand-ups--&-Retrospective 
+
+## Vragen aan de opdrachtgever
+Voor vrijdag hebben wij een paar vragen opgesteld die wij aan de opdrachtgever Michiel Vogler wouden vragen. 
+
+1. Wat wil de opdrachtgever met deze opdracht?
+2. Eigen repo op github of repo van het bedrijf zelf? (vanuit school moet github)
+3. Prototype start from scratch?
+4. Wat is de doelstelling?
+5. Wat zijn de randvoorwaarden?
+6. Heeft het project relatie met een andere project?
+7. Voor desktop alleen? of desktop en mobile?
+8. Hosten jullie het zelf?
+9. Is er al een design? Is er een huisstijl? Is de huisstijl van de hello strandeiland?
+10. Moet het een progressive web app worden? (zodat de app downloadbaar is)
+11. Hoe moeten de voorstellen eruit komen te zien? Moet het een soort document worden of tekst met eventueel een afbeelding?
+12. Hoe ziet u het onderdeel van de projectmanager voor zich? Bewoners en projectmanager een account of alleen projectmanager een account.
+13. Zijn er specifieke thema’s, zoals lagere ecologische footprint en betere sociale cohesie van de wijk of moeten gebruikers deze zelf aan kunnen maken bij het voorstel?
+14. Wanneer er meerdere voorstellen zijn geüpload, wilt u deze dan op een pagina zien waar u kunt filteren of onder verschillende tabbladen wilt met de verschillende thema’s?
+15. In hoeverre verschilt dit project met hallostrandeiland.nl, aangezien je daar ook berichten hebt waar je een reactie bij kan plaatsen?Hebben jullie het logo en beeldmateriaal, zodat wij dit kunnen gebruiken?
+
+## Mindmap
+We hebben ook een mindmap gemaakt, met de informatie die bekend was hebben wij een uitgebreide mindmap kunnen maken
+![mindmap](https://github.com/K3A101/meesterproef-2223/blob/main/images/Meesterproef-3.jpg)
 
 
 ## Debriefing 
+We hadden naast het gesprek met de opdrachtgever ook een debriefing die wij moesten afmaken. De debriefing bestond uit een zo uitgebreid mogelijk project beschrijving. Hier is de debriefing te zien 
+ https://github.com/RainbowJM/strandeiland/wiki/Debriefing
+
+## Ideegeneratie
+Na de briefing begonnen we met brainstormen, we moesten al bedenken wat we precies willen uitwerken en hoe precies we dit kunnen behalen. Hiervoor hebben we miro gebruikt omdat we hier gezamelijk in kunnen werken.
+
+## Moscow Methode
+![Moscow](https://github.com/K3A101/meesterproef-2223/blob/main/images/brainstorming.png)
+Om de moscow methode toe te passen, hadden we een beter overzicht en konden we beter prioriteiten stellen
+
+## Requirement list
+- Er is een overzichtpagina waar gebruiker een overzicht van alle wensen kan zien.
+- Gebruikers kan filteren op basis van populariteit, recentheid en thema's.
+- Gebruikers moeten zelf een voorstel kunnen aanmaken met behulp van een wens aanmaak formulier.
+- Localstorage toepassen op het formulier
+- Een real time chat waar gebruikers berichten kunnen sturen 
 
 
-## Schetsen (formulier)
+## Visuele analyse
+Vanuit Michel hebben we een brandbook gekregen die de gemeente van Amsterdam heeft ontworpen voor de website van strandeiland. Keisha heeft dit brandbook vertaald naar visuele elementen, gebasseerd op de visuele elementen hebben wij per pagina verschillende schetsen kunnen maken. 
 
+## Schetsen formulier pagina
+foto hiero 
 
+Hier is de eerste versie van het formulier te zien, de gebruiker kan de titel van de wens meegeven, de beschrijving en ook de thema's. Om de thema's te kiezen, kunne wij makkelijker filteren. 
 
-## Feedback Debriefing
+## Feedback Michel 
+- We kunnen het thema bepalen met sustainability development goals of Donut economics
+- Kan wel van de huisstijl afwjken, moet wel strandeland gevoel uiten
+- meerdere thema's kunnen selecteren in het formulier
+- thema's moeten goed bekeken worden, strandeiland bestaat nog niet, dus speeltuin etc gaat niet handig zijn
+- alle dingen die fout gaan op dit moment, die kun je vooraf voorkomen, zulke wensen wilt hij zien
 
+## Design iteratie
+Op basis van de feedback, die we tijdens het gesprek kregen, hebben wij de design kunnen maken.
+Zie hieronder 
 
+foto hiero 
 
+## Code
+De eerste week was meer het opbouwen van de code, ik heb verschillende packages gedownload, gekeken hoe ik de elementen van het formulier het beste in html, css en javascript kan verwerken.
 
+Hier kan je een lege opzet van css zien
 
-## Test met opdrachtgever
+```css
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+}
 
+body{
+}
 
-## Feedback van opdrachtgever / docent (code en design review) verwerken
+header{
+}
 
+h1, h2, a{
+}
+
+footer{
+
+}
+
+```
 
 
 ## Reflectie 
@@ -125,20 +202,28 @@ Door strak te plannen hebben wij best veel kunnen doen. Wat ik anders misschien 
 
 
 
-
 # Week 2
-## Wat heb ik deze week gedaan
+W hebben een aantal taken vorige week af kunnen maken, maar deze week moeten wij weer aan de bak. W
+e zijn de dag begonnen om alvast te kijken naar de verschillende thema’s die wij bij de wensen pagina kunnen hebben. 
+Na het samen bepalen van de thema’s, hebben wij gekeken naar de feedback van de opdrachtgever en wat we verder nog moeten uitwerken. Dit hebben wij verdeeld onder de taken. 
 
-Ik heb deze week de volgende taken afgerond. 
- 
 ## Thema’s opstellen
-## Formulier afmaken
+opgestelde thema's 
+
 ## De bevestiging pagina
+
 ## Localstorage 
+
 ## Dropdown menu en afbeelding onderzoek
+
 ## Schetsen formulier
+
+
 ## Bevestiging pagina maken
+
+
 ## Img preview
+
 
 ## Feedback van opdrachtgever / docent (code en design review) verwerken
 
@@ -149,7 +234,7 @@ Verder hebben wij constant de feedback van onze docenten ook erin verwerkt, wij 
 
 
 # Week 3
-## Wat heb ik deze week gedaan
+
 
 Ik heb de volgende taken deze week gedaan
 ## Img preview 
@@ -303,14 +388,19 @@ if (titleInput) {
 }
 ```
 
-
 ## Javascript errors 
+Tijdens het mergen van de code, kwamen we steeds veel errors tegen. Er kwamen steeds variable undefined, niet goed geplaatst, etc. Localstorage heeft een bug en nog veel meer. Omdat we in modules werken, kan het soms tricky zijn om code op te halen en die dan in de main.js terug te halen. Gelukkig hadden wij de tijd genomen tijdens de refator om de errors te kunnen fixen. 
+
+Jevona was in controle van version control, zij was ons github master. Als je een error had, kon je het zelf oplossen, of ging Jevona soms samen zitten om eraan te werken. 
 
 
 
 
 ## Form data versturen naar database
+Wij gebruiken de database, supabase. Ik heb geen ervaring van supabase, dus moest ik en ook de andere gewend aan raken. 
+Aan mij was de opdracht gegeven, van het posten van het formulier data naar de database en die dan terug te halen vanuit de database naar de index.ejs
 
+Hier laat ik even mijn code van versturen van de data naar de database 
 
 ```javascript
 
@@ -372,11 +462,17 @@ router.post("/form", async (req, res) => {
 });
 ```
 
-
-
 ## Design afronden
+Tijdens het heen en weer testen, kwam ik een paar punten tegen die ik wou toepassen in mijn productbio net als:
+- Ronde hoeken, geen scherpe hoeken
+- Kleuren van de buttons moeten anders, geen boxshadow 
+- Extra validatie bij het selecteren van de thema's 
+- De pop-up verder stylen, wat groter en de content erin ook 
 
+Zie hier de verbeterde versie 
+![5dc2a675-4415-4bd9-adf5-a41567a9fdae](https://github.com/RainbowJM/strandeiland/assets/94360732/314a65f4-4f1f-42b3-a61d-482d599753d3)
 
+<img width="1300" alt="Schermafbeelding 2023-06-28 om 15 17 47" src="https://github.com/RainbowJM/strandeiland/assets/94360732/a1b6dfe5-5358-482c-a2a6-27a6270c1096">
 
 
 
@@ -403,15 +499,14 @@ Strandeiland bestaat nog niet, dus de gebruikers hebben geen foto's om te upload
 
 Wij hebben alleen voor de zekerheid de mogelijkheid om een bestand toe te voegen gelaten, dit kan handig zijn in de toekomst en dan kan ik ook eindelijk multer toe voegen om toch de bestanden te kunnen door sturen naar de database. 
 
-
-
-
 ## Reflectie
+Deze week lag de stress hoog, we moesten ervoor zorgen dat alles af was voor volgende week, zodat we kunnen focussen op het schoonmaken van de code, de code te mergen om een stabiele versie van de code te hebben in onze main branch. Ik heb deze week geprobeerd om zo ver mogelijk te werken en mijn pagina keer op keer te testen om tot volgende week de errors te kunnen oplossen. Volgende week hebben wij een drukke sprint, dus wou ik deze week zoveel mogelijk doen, om mijzelf niet meer zo druk te maken. 
+Ik heb deze week wel nog veel taken kunnen afmaken gelukkig, ik vind hoe het formulier eruit ziet, een compleet mooi formulier.
 
 
 
 # Week 5
-## Wat heb ik deze week gedaan
+
 
 
 
