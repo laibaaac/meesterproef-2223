@@ -1,7 +1,7 @@
 # Meesterproef Strandeiland
 [Team repo](https://github.com/RainbowJM/strandeiland) 
 
-<img width=200 alt= src=https://github.com/laibaaac/meesterproef-2223/assets/94360732/04c50d13-61b1-44f9-a76b-9f3d1d3cef71>
+![logo](https://github.com/laibaaac/meesterproef-2223/assets/94360732/54f1a040-3785-467c-9679-209dca4fc5e9)
 
 Voor het eindproject voor het minor web (MEESTERPROEF), gaan wij in groepjes aan de slag met een opdracht. 
 We mochten zelf een opdracht uitkiezen en ons voorkeuren van groepjes. 
@@ -153,8 +153,8 @@ Om de moscow methode toe te passen, hadden we een beter overzicht en konden we b
 Vanuit Michel hebben we een brandbook gekregen die de gemeente van Amsterdam heeft ontworpen voor de website van strandeiland. Keisha heeft dit brandbook vertaald naar visuele elementen, gebasseerd op de visuele elementen hebben wij per pagina verschillende schetsen kunnen maken. 
 
 ## Schetsen formulier pagina
-foto hiero 
-
+<img width="500" alt="week1-schets" src="https://github.com/laibaaac/meesterproef-2223/assets/94360732/aa7698fc-0bfc-4d55-b42c-1101d80863b6">
+Om alvast een idee te krijgen hoe de pagina erui gaat zien heb ik alvast een paar schetsen gemaakt
 Hier is de eerste versie van het formulier te zien, de gebruiker kan de titel van de wens meegeven, de beschrijving en ook de thema's. Om de thema's te kiezen, kunne wij makkelijker filteren. 
 
 ## Feedback Michel 
@@ -168,7 +168,9 @@ Hier is de eerste versie van het formulier te zien, de gebruiker kan de titel va
 Op basis van de feedback, die we tijdens het gesprek kregen, hebben wij de design kunnen maken.
 Zie hieronder 
 
-foto hiero 
+<img width="500" alt="week1-design" src="https://github.com/laibaaac/meesterproef-2223/assets/94360732/908b60e7-5bc1-4a63-b40c-ae0fc4f34f04">
+
+
 
 ## Code
 De eerste week was meer het opbouwen van de code, ik heb verschillende packages gedownload, gekeken hoe ik de elementen van het formulier het beste in html, css en javascript kan verwerken.
@@ -248,7 +250,8 @@ Ik render de pagina al in routing, wanneer alles goed gaat, dan zie je deze pagi
 **Design**
 De styling zelf lijkt op de banner op de index pagina. Alleen qua grootte is het anders en ook de tekst. We wouden dit weer teurg laten komen en het zag er ook leuk uit om het als een bevestigingspagina te krijgen  
 
-foto hiero 
+<img width="500" alt="Schermafbeelding 2023-06-30 om 10 06 55" src="https://github.com/laibaaac/meesterproef-2223/assets/94360732/d408de11-cd30-46e5-98e9-b318fa65f71f">
+
 
 
 **Animatie**
@@ -436,7 +439,9 @@ function handleSelectedOptionClick() {
 ```
 
 ## De design aanpassen
-foto hiero
+Op basis van de feedback die ik kreeg tijdens de code en design review, heb ik even de design aangepast
+<img width="456" alt="Schermafbeelding 2023-06-30 om 10 07 58" src="https://github.com/laibaaac/meesterproef-2223/assets/94360732/641dff3a-9c3b-4299-aae5-933459ae6c73">
+
 
 
 ## Formulier post
@@ -828,10 +833,14 @@ De volgende dingen moest ik aanpassen:
 ```
 - Reduce css 
 - Img resizing (dit kon ik niet aanpassen, want de afbeelding komen rechtstreeks vanuit de database)
-foto hiero 
+<img width="500" alt="Schermafbeelding 2023-06-28 om 14 13 12" src="https://github.com/laibaaac/meesterproef-2223/assets/94360732/0345abf4-3ece-4850-946d-c9f4425df5de">
+<img width="500" alt="Schermafbeelding 2023-06-28 om 13 43 00" src="https://github.com/laibaaac/meesterproef-2223/assets/94360732/9944a76f-856d-4788-8b31-bafed0088ad0">
+<img width="1436" alt="Schermafbeelding 2023-06-28 om 13 41 49" src="https://github.com/laibaaac/meesterproef-2223/assets/94360732/a31e5f0a-1f58-457a-a3e8-391a0bc712c6">
+
 
 Na dat Jevona de css had geminified (bij de reduce css)
-foto hiero
+![test-index](https://github.com/laibaaac/meesterproef-2223/assets/94360732/e4dc808f-6b1c-46d5-883f-73a34eb5f975)
+
 
 
 ## Code refactor 
